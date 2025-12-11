@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["logueado"])) {
+    header("Location: cabecera.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
