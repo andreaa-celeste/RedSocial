@@ -1,0 +1,105 @@
+/* Fuente y reset básico */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0f172a;        /* Fondo (slate-900) */
+  --bg-soft: #111827;   /* Fondo suave para hover */
+  --text: #e5e7eb;      /* Texto (gray-200) */
+  --accent: #22d3ee;    /* Acento (cyan-400) */
+  --divider: #1f2937;   /* Línea divisoria (gray-800) */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Contenedor del header */
+header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;         /* Centrado; cambia a 'space-between' si añades un logo */
+  padding: 1rem 1.25rem;
+  position: sticky;                 /* Se mantiene arriba al hacer scroll */
+  top: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--divider);
+  z-index: 50;
+}
+
+/* Enlaces del menú */
+header a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 0.5rem;
+  transition: color 160ms ease, background-color 160ms ease, transform 120ms ease;
+}
+
+/* Estados hover/focus/active */
+header a:hover,
+header a:focus-visible {
+  background: var(--bg-soft);
+  color: white;
+}
+
+header a:active {
+  transform: translateY(1px);
+}
+
+/* Estado “activo” según página (añade class="active" al enlace correspondiente) */
+header a.active {
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.35);
+}
+
+/* Separador */
+hr {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 0;
+}
+
+/* Responsive: en pantallas pequeñas, más espacio y wrap si hace falta */
+@media (max-width: 640px) {
+  header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  header a {
+    padding: 0.5rem 0.6rem;
+    font-weight: 600;
+  }
+}
+
+/* Prefiere esquema claro del sistema */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f3f4f6;
+    --text: #111827;
+    --accent: #0ea5e9;
+    --divider: #e5e7eb;
+  }
+  header {
+    background: rgba(255, 255, 255, 0.75);
+  }
+  header a:hover,
+  header a:focus-visible {
+    background: var(--bg-soft);
+    color: var(--text);
+  }
+}
