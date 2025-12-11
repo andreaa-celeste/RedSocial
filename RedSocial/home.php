@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["logueado"])) {
-    header("Location: cabecera.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +7,9 @@ if (!isset($_SESSION["logueado"])) {
 
 <body>
     <?php
-    require_once "../RedSocial/cabecera.php";
-    require_once "bd/procesa.php";
-    require_once "bd/bd.php";
+    require_once "../cabecera.php";
+    require_once "../procesa.php";
+    require_once "../BD/bd.php";
 
     $sql = "SELECT * FROM usuario WHERE email != :email";
 
