@@ -1,0 +1,96 @@
+:root {
+  --bg: #0f172a;
+  --bg-light: #1e293b;
+  --text: #e2e8f0;
+  --accent: #22d3ee;
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+h2, h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: #0f172a;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: #94a3b8;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background-color: var(--accent);
+  color: #0f172a;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2dd4bf;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: transform 0.1s ease;
+}
+
+section li:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+section strong {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+section small {
+  display: block;
+  color: #94a3b8;
+  margin-top: 0.25rem;
+}
