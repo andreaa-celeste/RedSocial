@@ -30,7 +30,10 @@
     }
     ?>
     <a href="modificar.php">Modificar</a>
+    <a href="../SEGUIMIENTO/solicitudes.php">Ver Solicitudes</a>
     <a href="../POST/nuevoPost.php">Nuevo Post</a>
+    <a href='../ACCESO/logout.php'>Cerrar sesión</a>
+
     <h2>POST</h2>
 
     <?php
@@ -51,11 +54,12 @@
             echo "<a href='" . $post['archivo_adjunto'] . "'>ver archivo adjunto</a><br>";
         }
         echo "<small>Publicado el: " . $post['fecha_publicacion'] . "</small><br><br>";
-        echo "<a href='../POST/verPost.php?id=" . $post['id_post'] . "'>Ver Comentarios</a>";
+        echo "<a href='../POST/verPost.php?id=" . $post['id_post'] . "'>Ver Comentarios</a>&nbsp;&nbsp;&nbsp;";
         echo "<a href='../POST/borrar.php?id=" . $post['id_post'] . "'>Borrar</a>";
         echo "</div>";
     }
     ?>
+
 </body>
 
 </html>
